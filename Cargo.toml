@@ -1,8 +1,13 @@
 [package]
 name = "coqui-stt-sys"
 version = "1.1.0"
+authors = ["0/0 <zero@imaskeleton.me>"]
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+description = "FFI bindings to Coqui STT"
+license = "MPL-2.0"
+documentation = "https://docs.rs/coqui-stt-sys"
+repository = "https://github.com/tazz4843/coqui-stt-sys"
+keywords = ["speech-to-text", "stt"]
+categories = ["multimedia::audio"]
 
 [dependencies]
