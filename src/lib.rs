@@ -101,4 +101,39 @@ mod tests {
             )
         );
     }
+
+    #[test]
+    fn bindgen_test_layout_Metadata() {
+        assert_eq!(
+            ::std::mem::size_of::<Metadata>(),
+            16usize,
+            concat!("Size of: ", stringify!(Metadata))
+        );
+        assert_eq!(
+            ::std::mem::align_of::<Metadata>(),
+            8usize,
+            concat!("Alignment of ", stringify!(Metadata))
+        );
+        assert_eq!(
+            unsafe { &(*(::std::ptr::null::<Metadata>())).transcripts as *const _ as usize },
+            0usize,
+            concat!(
+            "Offset of field: ",
+            stringify!(Metadata),
+            "::",
+            stringify!(transcripts)
+            )
+        );
+        assert_eq!(
+            unsafe { &(*(::std::ptr::null::<Metadata>())).num_transcripts as *const _ as usize },
+            8usize,
+            concat!(
+            "Offset of field: ",
+            stringify!(Metadata),
+            "::",
+            stringify!(num_transcripts)
+            )
+        );
+    }
+
 }
