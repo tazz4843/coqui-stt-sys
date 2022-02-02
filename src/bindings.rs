@@ -5,13 +5,13 @@
 #![allow(deref_nullptr)]
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, Default)]
 pub struct ModelState {
     _unused: [u8; 0],
 }
 
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, Default)]
 pub struct StreamingState {
     _unused: [u8; 0],
 }
@@ -52,6 +52,7 @@ pub struct Metadata {
     #[doc = " Size of the transcripts array"]
     pub num_transcripts: ::std::os::raw::c_uint,
 }
+
 pub const STT_Error_Codes_STT_ERR_OK: STT_Error_Codes = 0;
 pub const STT_Error_Codes_STT_ERR_NO_MODEL: STT_Error_Codes = 4096;
 pub const STT_Error_Codes_STT_ERR_INVALID_ALPHABET: STT_Error_Codes = 8192;
