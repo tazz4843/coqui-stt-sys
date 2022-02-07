@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install libstt
       run: |
-        wget https://github.com/coqui-ai/STT/releases/download/v1.2.0/libstt.tflite.Linux.zip && unzip libstt.tflite.Linux.zip -d /lib
+        wget https://github.com/coqui-ai/STT/releases/download/v1.2.0/libstt.tflite.Linux.zip && sudo unzip libstt.tflite.Linux.zip -d /lib
     
     - name: Install latest stable Rust
       uses: actions-rs/toolchain@v1
