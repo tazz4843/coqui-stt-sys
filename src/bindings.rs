@@ -91,6 +91,19 @@ extern "C" {
         retval: *mut *mut ModelState,
     ) -> ::std::os::raw::c_int;
 
+    #[doc = " @brief An object providing an interface to a trained Coqui STT model, loaded from a buffer."]
+    #[doc = ""]
+    #[doc = " @param aModelBuffer The buffer containing the content of the exported model."]
+    #[doc = " @param aBufferSize Size of model buffer."]
+    #[doc = " @param[out] retval a ModelState pointer"]
+    #[doc = ""]
+    #[doc = " @return Zero on success, non-zero on failure."]
+    pub fn STT_CreateModelFromBuffer(
+        aModelBuffer: *const ::std::os::raw::c_char,
+        aBufferSize: ::std::os::raw::c_uint,
+        retval: *mut *mut ModelState,
+    ) -> ::std::os::raw::c_int;
+
     #[doc = " @brief Get beam width value used by the model. If {@link STT_SetModelBeamWidth}"]
     #[doc = "        was not called before, will return the default value loaded from the"]
     #[doc = "        model file."]
@@ -131,6 +144,19 @@ extern "C" {
     pub fn STT_EnableExternalScorer(
         aCtx: *mut ModelState,
         aScorerPath: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+
+    #[doc = " @brief Enable decoding using an external scorer loaded from a buffer."]
+    #[doc = ""]
+    #[doc = " @param aCtx The ModelState pointer for the model being changed."]
+    #[doc = " @param aScorerBuffer The buffer containing the content of an external-scorer file."]
+    #[doc = " @param aBufferSize Size of scorer buffer."]
+    #[doc = ""]
+    #[doc = " @return Zero on success, non-zero on failure (invalid arguments)."]
+    pub fn STT_EnableExternalScorerFromBuffer(
+        aCtx: *mut ModelState,
+        aScorerBuffer: *const ::std::os::raw::c_char,
+        aBufferSize: ::std::os::raw::c_uint,
     ) -> ::std::os::raw::c_int;
 
     #[doc = " @brief Add a hot-word and its boost."]

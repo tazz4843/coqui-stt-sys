@@ -118,22 +118,21 @@ mod tests {
             unsafe { &(*(::std::ptr::null::<Metadata>())).transcripts as *const _ as usize },
             0usize,
             concat!(
-            "Offset of field: ",
-            stringify!(Metadata),
-            "::",
-            stringify!(transcripts)
+                "Offset of field: ",
+                stringify!(Metadata),
+                "::",
+                stringify!(transcripts)
             )
         );
         assert_eq!(
             unsafe { &(*(::std::ptr::null::<Metadata>())).num_transcripts as *const _ as usize },
             8usize,
             concat!(
-            "Offset of field: ",
-            stringify!(Metadata),
-            "::",
-            stringify!(num_transcripts)
+                "Offset of field: ",
+                stringify!(Metadata),
+                "::",
+                stringify!(num_transcripts)
             )
         );
     }
-
 }
