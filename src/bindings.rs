@@ -78,7 +78,8 @@ pub const STT_Error_Codes_STT_ERR_FAIL_CLEAR_HOTWORD: STT_Error_Codes = 12297;
 pub const STT_Error_Codes_STT_ERR_FAIL_ERASE_HOTWORD: STT_Error_Codes = 12304;
 pub type STT_Error_Codes = ::std::os::raw::c_uint;
 
-#[link(name = "stt")]
+#[cfg_attr(not(target_os = "windows"), link(name = "stt"))]
+#[cfg_attr(target_os = "windows", link(name = "libstt.so.if"))]
 extern "C" {
     #[doc = " @brief An object providing an interface to a trained Coqui STT model."]
     #[doc = ""]
