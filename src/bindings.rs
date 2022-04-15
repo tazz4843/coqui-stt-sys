@@ -99,6 +99,7 @@ extern "C" {
     #[doc = " @param[out] retval a ModelState pointer"]
     #[doc = ""]
     #[doc = " @return Zero on success, non-zero on failure."]
+    #[cfg(not(target_os = "windows"))]
     pub fn STT_CreateModelFromBuffer(
         aModelBuffer: *const ::std::os::raw::c_char,
         aBufferSize: ::std::os::raw::c_uint,
@@ -154,6 +155,7 @@ extern "C" {
     #[doc = " @param aBufferSize Size of scorer buffer."]
     #[doc = ""]
     #[doc = " @return Zero on success, non-zero on failure (invalid arguments)."]
+    #[cfg(not(target_os = "windows"))]
     pub fn STT_EnableExternalScorerFromBuffer(
         aCtx: *mut ModelState,
         aScorerBuffer: *const ::std::os::raw::c_char,
